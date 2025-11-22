@@ -228,8 +228,8 @@ function processMerge(q, r) {
 function renderBoard() {
     boardEl.innerHTML = '';
     const hexes = getGridHexes(GRID_RADIUS);
-    const centerX = boardEl.clientWidth / 2;
-    const centerY = boardEl.clientHeight / 2;
+    const centerX = boardEl.clientWidth / 2.4;
+    const centerY = boardEl.clientHeight / 2.5;
     
     hexes.forEach((h, index) => {
         const { x, y } = hexToPixel(h.q, h.r);
