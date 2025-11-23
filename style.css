@@ -67,17 +67,13 @@ body {
 }
 
 .board-container {
-    position: relative;
-    width: 360px;
-    height: 360px;
-    background: rgba(0,0,0,0.2);
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255,215,0,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255,140,0,0.1) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(30,36,46,0.9) 0%, rgba(40,48,62,0.9) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.25);
 }
+
 
 .hex-grid {
     position: relative;
