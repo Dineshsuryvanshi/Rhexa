@@ -27,26 +27,40 @@
     touch-action: none;
 }
 
+
+/* Body background को भी improve करें */
 body {
-    background-color: var(--bg-color);
+    background: linear-gradient(
+        135deg, 
+        #0f1218 0%, 
+        #151921 30%, 
+        #1a1f2e 70%, 
+        #151921 100%
+    );
     color: var(--text-color);
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 96vh;
+    min-height: 100vh;
     width: 100vw;
+    touch-action: none;
 }
 
+/* Game container को थोड़ा highlight करें */
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     padding: 20px;
+    animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Add subtle glow */
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.05);
+    border-radius: 20px;
 }
 
 .header {
@@ -101,14 +115,19 @@ body {
     /* This will center all the hex slots */
     transform: translate(0, 0);
 }
-.hex-slot {
-    position: absolute;
-    width: var(--hex-width);
-    height: var(--hex-height);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease;
+
+
+/* Hex slots पर hover effect improve करें */
+.hex-slot:hover .hexagon:not(.tile) {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 215, 0, 0.15) 0%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 
+        inset 0 0 15px rgba(255, 215, 0, 0.1),
+        0 0 10px rgba(255, 215, 0, 0.2);
 }
 
 /* Hexagon Shape */
