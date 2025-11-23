@@ -67,11 +67,26 @@ body {
 }
 
 .board-container {
-    background: 
-        radial-gradient(circle at 30% 30%, rgba(255,215,0,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(255,140,0,0.1) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(30,36,46,0.9) 0%, rgba(40,48,62,0.9) 100%);
-    border: 2px solid rgba(255, 215, 0, 0.25);
+    position: relative;
+    width: 360px;
+    height: 360px;
+    /* IMPROVED BACKGROUND - More visible gradient */
+    background: radial-gradient(
+        ellipse at center, 
+        rgba(255, 215, 0, 0.15) 0%, 
+        rgba(255, 140, 0, 0.1) 30%, 
+        rgba(30, 36, 46, 0.8) 70%,
+        rgba(20, 25, 35, 0.9) 100%
+    );
+    border-radius: 50%;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 
+        0 0 60px rgba(255, 215, 0, 0.15),
+        inset 0 0 40px rgba(255, 215, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
