@@ -429,6 +429,10 @@
         </div>
 
         <div id="hand-container" class="hand-container"></div>
+        <div id="share"> 
+        <h4 id="cap">share with your frends</h4>
+        <button id="sb"> share now !</button>
+        </div>
     </div>
 
     <div id="game-over-modal" class="modal hidden">
@@ -443,5 +447,28 @@
     <div id="drag-ghost" class="drag-ghost hidden"></div>
 
     <script src="script.js"></script>
+    <!-- Telegram WebApp JS (mini app ke liye) -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <script>
+      const shareBtn = document.getElementById('sb');
+    
+      shareBtn.addEventListener('click', () => {
+        // Yaha apne bot / game ka link do
+        const gameUrl = encodeURIComponent('https://t.me/Hexagon_gamebot'); 
+        const text = encodeURIComponent('इस मजेदार Hexa Puzzle गेम को खेलो!');
+    
+        // Telegram ka official share-link
+        const shareLink = `https://t.me/share/url?url=${gameUrl}&text=${text}`;
+    
+        // Agar app Telegram Mini App ke andar chal rahi hai:
+        if (window.Telegram && Telegram.WebApp && Telegram.WebApp.openTelegramLink) {
+          Telegram.WebApp.openTelegramLink(shareLink);
+        } else {
+          // Backup: normal browser me open karne ke liye
+          window.open(shareLink, '_blank');
+        }
+      });
+    </script>
 </body>
 </html>
